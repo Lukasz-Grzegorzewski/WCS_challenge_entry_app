@@ -1,0 +1,19 @@
+{
+  "name": "1.wcs-challenge_entry-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm i && husky install && npm --prefix ./frontend i && npm --prefix ./api i",
+    "migrate": "npm --prefix ./api run migrate",
+    "dev": "concurrently -n front,back -c green,yellow -t \"HH:mm:ss\" -p \"{name} {time}\" \"npm --prefix ./frontend run dev-front\" \"npm --prefix ./api run dev-back\" ",
+    "dev-front": "npm --prefix ./frontend run dev",
+    "dev-back": "npm --prefix ./api run dev"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "husky": "^8.0.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
